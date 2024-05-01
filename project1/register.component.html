@@ -1,0 +1,90 @@
+<body id="page1" class="login-form">
+    <link rel="stylesheet" href="register.component.css">
+    <div class="bgimg">
+        <img src="YantraImage.jpg" alt="yantraimage">
+    </div>
+    <!-- <form #authForm="ngForm"> -->
+        <!-- <div class="form-input">
+            <label>Email Address</label>
+            <input type="email" placeholder="Email" name="email" ngModel required email #email="ngModel">
+        </div>
+        <div class="form-input">
+            <label>UserName</label>
+            <input type="UserName" placeholder="UserName" name="username" ngModel required #username="ngModel">
+        </div>
+        <div class="form-input">
+            <label>Password</label>
+            <input type="password" placeholder="Password" name="password" ngModel minlength="8" #password="ngModel">
+        </div>
+        <button type="check" class="chk" (click)="onFormSubmitted(authForm)">check</button>
+        <form (keydown.enter)="$event.preventDefault()"></form>
+        <button type="submit" class="Login-btn" [disabled]="!this.servicefile.submitEnable" (click)="register()">
+            {{'Register'}}</button>
+        <p>{{isLogin ? 'Do not have an account yet?' :
+            'Already have an account?'}}
+            <button class="app-toggle-btn" type="button" routerLink="login" routerLinkActive="active">
+                {{'Login Here'}}</button> -->
+            <!-- <a class="app-toggle-btn" >Login
+                Here</a> -->
+        <!-- </p>
+    </form> -->
+    <div class="container">
+        <h1 id="head">
+            { 'Register'}
+        </h1>
+    
+    <form #authForm="ngForm">
+<div>
+    <div class="form-input">
+        <label>Email Address</label>
+    <input
+    #e name="emil"
+   type="email" placeholder="Email" 
+    (keyup.enter)="emailFun(e.value)"
+    (blur)="emailFun(e.value);"
+    required="required" />
+    <div *ngIf="this.servicefile.email_user ==false"
+    class="alert alert-danger"> Email is already exist</div>
+</div>
+<br>
+<div class="form-input">
+    <label>UserName</label>
+    <input
+      #u
+      placeholder="UserName"
+      (keyup.enter)="usernameFun(u.value)"
+      (blur)="usernameFun(u.value);"
+      required="required" 
+    />
+    <div *ngIf="this.servicefile.user_name ==false"
+    class="alert alert-danger"> UserName is already exist</div>
+    </div>
+    <br>
+<div class="form-input">
+    <label>Password</label>
+    <input
+    #p 
+    type="password" placeholder="Password"
+     minlength="8" 
+    (keyup.enter)="passwordFun(p.value)"
+    (blur)="passwordFun(p.value);"
+    required="required" 
+  />
+  <div *ngIf="this.servicefile.pass ==false"
+  class="alert alert-danger"> Password is not strong</div>
+  </div>
+</div>
+<br>
+<button type="submit" class="Login-btn" [disabled]="!this.servicefile.submitEnable" (click)="register()">
+    {{'Register'}}</button>
+<p>{{isLogin ? 'Do not have an account yet?' :
+    'Already have an account?'}}
+   <!-- <button class="app-toggle-btn" type="button" routerLink="login" routerLinkActive="active">
+        {{'Login Here'}}</button> -->
+
+            <a class="nav-link" routerLink="login" routerLinkActive="active">Login Here</a>
+    
+
+</form>
+</div>
+</body>
